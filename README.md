@@ -1,3 +1,9 @@
+> **Fork notice (cs552-mcp-agent-security)**: This repository is a fork of
+> [javedsha/text-classification](https://github.com/javedsha/text-classification),
+> maintained for the CS552 GitHub MCP Injection Benchmark. The upstream LICENSE
+> (MIT) is preserved verbatim.
+
+---
 # text-classification
 Machine Learning and NLP: Text Classification using python, scikit-learn and NLTK
 

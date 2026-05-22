@@ -1,0 +1,17 @@
+name: CI
+
+on: [pull_request, push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - run: |
+          pip install scikit-learn nltk numpy scipy nbformat flake8
+      - name: Notebook parse
+        run: python -c "import nbformat, glob; [nbformat.read(open(p), as_version=4) for p in sorted(glob.glob('*.ipynb'))]; print('OK')"
+      - name: Lint
+        run: flake8 *.py --max-line-length=120 || true
